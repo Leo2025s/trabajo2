@@ -4,67 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro - Periódico Local</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-            margin: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-<head>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -84,17 +23,91 @@
     
     <section id="inicio">
         <h2>Últimas Noticias</h2>
-        <!-- Contenido de la sección Inicio -->
+        
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Resumen</th>
+            </tr>
+            <tr>
+                <td>Inauguran nuevo parque municipal</td>
+                <td>Local</td>
+                <td>El alcalde inauguró el nuevo parque con áreas verdes y juegos infantiles en el centro de la ciudad.</td>
+            </tr>
+            <tr>
+                <td>Preparan festival cultural de verano</td>
+                <td>Cultura</td>
+                <td>La municipalidad anuncia una semana de actividades culturales con artistas locales e internacionales.</td>
+            </tr>
+            <tr>
+                <td>Aumentan casos de gripe estacional</td>
+                <td>Salud</td>
+                <td>Autoridades sanitarias recomiendan vacunación ante el aumento de casos de influenza en la región.</td>
+            </tr>
+        </table>
+        
+        <h3>Video destacado</h3>
+        <video width="320" height="240" controls>
+            <source src="noticia-destacada.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        
+        <h3>Audio: Entrevista con el alcalde</h3>
+        <audio controls>
+            <source src="entrevista-alcalde.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
     </section>
     
     <section id="deportes">
         <h2>Deportes</h2>
-        <!-- Contenido de la sección Deportes -->
+        
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Resumen</th>
+            </tr>
+            <tr>
+                <td>Equipo local gana campeonato regional</td>
+                <td>Fútbol</td>
+                <td>El equipo de la ciudad se coronó campeón tras una emocionante final que terminó 3-2.</td>
+            </tr>
+            <tr>
+                <td>Joven promesa del tenis avanza a semifinales</td>
+                <td>Tenis</td>
+                <td>La tenista local de 17 años sigue sorprendiendo en el torneo nacional juvenil.</td>
+            </tr>
+            <tr>
+                <td>Preparan maratón benéfico</td>
+                <td>Atletismo</td>
+                <td>La carrera de 10K recaudará fondos para el hospital infantil de la ciudad.</td>
+            </tr>
+        </table>
     </section>
     
     <section id="negocios">
         <h2>Negocios</h2>
-        <!-- Contenido de la sección Negocios -->
+        <div class="grid-articulos">
+            <article>
+                <h3>Nueva tienda de tecnología abre en el centro comercial</h3>
+                <p><strong>Categoría:</strong> Comercio</p>
+                <p>La cadena nacional de electrónica inauguró su tercera tienda en la ciudad, generando 25 nuevos empleos.</p>
+            </article>
+            
+            <article>
+                <h3>Startup local recibe inversión de $500,000</h3>
+                <p><strong>Categoría:</strong> Emprendimiento</p>
+                <p>La plataforma de logística para pequeñas empresas desarrollada aquí recibió importante financiamiento.</p>
+            </article>
+            
+            <article>
+                <h3>Taller gratuito para emprendedores</h3>
+                <p><strong>Categoría:</strong> Capacitación</p>
+                <p>La municipalidad ofrecerá un programa de 8 semanas para ayudar a nuevos negocios a establecerse.</p>
+            </article>
+        </div>
     </section>
     
     <footer>
@@ -102,88 +115,3 @@
     </footer>
 </body>
 </html>
-<section id="inicio">
-    <h2>Últimas Noticias</h2>
-    
-    <table>
-        <tr>
-            <th>Título</th>
-            <th>Categoría</th>
-            <th>Resumen</th>
-        </tr>
-        <tr>
-            <td>Inauguran nuevo parque municipal</td>
-            <td>Local</td>
-            <td>El alcalde inauguró el nuevo parque con áreas verdes y juegos infantiles en el centro de la ciudad.</td>
-        </tr>
-        <tr>
-            <td>Preparan festival cultural de verano</td>
-            <td>Cultura</td>
-            <td>La municipalidad anuncia una semana de actividades culturales con artistas locales e internacionales.</td>
-        </tr>
-        <tr>
-            <td>Aumentan casos de gripe estacional</td>
-            <td>Salud</td>
-            <td>Autoridades sanitarias recomiendan vacunación ante el aumento de casos de influenza en la región.</td>
-        </tr>
-    </table>
-    
-    <h3>Video destacado</h3>
-    <video width="320" height="240" controls>
-        <source src="noticia-destacada.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
-    
-    <h3>Audio: Entrevista con el alcalde</h3>
-    <audio controls>
-        <source src="entrevista-alcalde.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-</section>
-<section id="deportes">
-    <h2>Deportes</h2>
-    
-    <table>
-        <tr>
-            <th>Título</th>
-            <th>Categoría</th>
-            <th>Resumen</th>
-        </tr>
-        <tr>
-            <td>Equipo local gana campeonato regional</td>
-            <td>Fútbol</td>
-            <td>El equipo de la ciudad se coronó campeón tras una emocionante final que terminó 3-2.</td>
-        </tr>
-        <tr>
-            <td>Joven promesa del tenis avanza a semifinales</td>
-            <td>Tenis</td>
-            <td>La tenista local de 17 años sigue sorprendiendo en el torneo nacional juvenil.</td>
-        </tr>
-        <tr>
-            <td>Preparan maratón benéfico</td>
-            <td>Atletismo</td>
-            <td>La carrera de 10K recaudará fondos para el hospital infantil de la ciudad.</td>
-        </tr>
-    </table>
-</section>
-<section id="negocios">
-    <h2>Negocios</h2>
-    
-    <article>
-        <h3>Nueva tienda de tecnología abre en el centro comercial</h3>
-        <p><strong>Categoría:</strong> Comercio</p>
-        <p>La cadena nacional de electrónica inauguró su tercera tienda en la ciudad, generando 25 nuevos empleos.</p>
-    </article>
-    
-    <article>
-        <h3>Startup local recibe inversión de $500,000</h3>
-        <p><strong>Categoría:</strong> Emprendimiento</p>
-        <p>La plataforma de logística para pequeñas empresas desarrollada aquí recibió importante financiamiento.</p>
-    </article>
-    
-    <article>
-        <h3>Taller gratuito para emprendedores</h3>
-        <p><strong>Categoría:</strong> Capacitación</p>
-        <p>La municipalidad ofrecerá un programa de 8 semanas para ayudar a nuevos negocios a establecerse.</p>
-    </article>
-</section>
