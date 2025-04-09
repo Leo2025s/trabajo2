@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro - Periódico Local</title>
-    <!-- Fuentes de Google (Requisito 1) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function actualizarReloj() {
+            const ahora = new Date();
+            const opciones = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit'
+            };
+            document.getElementById('reloj').textContent = ahora.toLocaleDateString('es-ES', opciones);
+        }
+    </script>
 </head>
-<body>
+<body onload="actualizarReloj(); setInterval(actualizarReloj, 1000);">
     <header>
         <img src="Logo.png" alt="Logo El Faro" width="150">
         <h1>El Faro</h1>
         <p>Tu periódico local confiable</p>
+        <div id="reloj"></div>
     </header>
     
     <nav>
@@ -20,100 +35,58 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#deportes">Deportes</a></li>
             <li><a href="#negocios">Negocios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
     
+    <section id="agregar-articulo">
+        <h2>Publicar Nuevo Artículo</h2>
+        <form id="form-articulo">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <textarea id="contenido" placeholder="Contenido" required></textarea>
+            <select id="categoria">
+                <option value="inicio">General</option>
+                <option value="deportes">Deportes</option>
+                <option value="negocios">Negocios</option>
+            </select>
+            <button type="submit">Publicar</button>
+        </form>
+    </section>
+    
     <section id="inicio">
-        <h2>Últimas Noticias</h2>
-        
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Resumen</th>
-            </tr>
-            <tr>
-                <td>Inauguran nuevo parque municipal</td>
-                <td>Local</td>
-                <td>El alcalde inauguró el nuevo parque con áreas verdes y juegos infantiles en el centro de la ciudad.</td>
-            </tr>
-            <tr>
-                <td>Preparan festival cultural de verano</td>
-                <td>Cultura</td>
-                <td>La municipalidad anuncia una semana de actividades culturales con artistas locales e internacionales.</td>
-            </tr>
-            <tr>
-                <td>Aumentan casos de gripe estacional</td>
-                <td>Salud</td>
-                <td>Autoridades sanitarias recomiendan vacunación ante el aumento de casos de influenza en la región.</td>
-            </tr>
-        </table>
-        
-        <h3>Video destacado</h3>
-        <video width="100%" max-width="600px" controls>
-            <source src="noticia-destacada.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-        </video>
-        
-        <h3>Audio: Entrevista con el alcalde</h3>
-        <audio controls>
-            <source src="entrevista-alcalde.mp3" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
+        <h2>Últimas Noticias <span class="contador-articulos" data-seccion="inicio"></span></h2>
+        <div class="grid-articulos">
+            <!-- Artículos se cargarán aquí dinámicamente -->
+        </div>
     </section>
     
     <section id="deportes">
-        <h2>Deportes</h2>
-        
-        <table>
-            <tr>
-                <th>Título</th>
-                <th>Categoría</th>
-                <th>Resumen</th>
-            </tr>
-            <tr>
-                <td>Equipo local gana campeonato regional</td>
-                <td>Fútbol</td>
-                <td>El equipo de la ciudad se coronó campeón tras una emocionante final que terminó 3-2.</td>
-            </tr>
-            <tr>
-                <td>Joven promesa del tenis avanza a semifinales</td>
-                <td>Tenis</td>
-                <td>La tenista local de 17 años sigue sorprendiendo en el torneo nacional juvenil.</td>
-            </tr>
-            <tr>
-                <td>Preparan maratón benéfico</td>
-                <td>Atletismo</td>
-                <td>La carrera de 10K recaudará fondos para el hospital infantil de la ciudad.</td>
-            </tr>
-        </table>
+        <h2>Deportes <span class="contador-articulos" data-seccion="deportes"></span></h2>
+        <div class="grid-articulos">
+            <!-- Artículos se cargarán aquí dinámicamente -->
+        </div>
     </section>
     
     <section id="negocios">
-        <h2>Negocios</h2>
+        <h2>Negocios <span class="contador-articulos" data-seccion="negocios"></span></h2>
         <div class="grid-articulos">
-            <article>
-                <h3>Nueva tienda de tecnología abre en el centro comercial</h3>
-                <p><strong>Categoría:</strong> Comercio</p>
-                <p>La cadena nacional de electrónica inauguró su tercera tienda en la ciudad, generando 25 nuevos empleos.</p>
-            </article>
-            
-            <article>
-                <h3>Startup local recibe inversión de $500,000</h3>
-                <p><strong>Categoría:</strong> Emprendimiento</p>
-                <p>La plataforma de logística para pequeñas empresas desarrollada aquí recibió importante financiamiento.</p>
-            </article>
-            
-            <article>
-                <h3>Taller gratuito para emprendedores</h3>
-                <p><strong>Categoría:</strong> Capacitación</p>
-                <p>La municipalidad ofrecerá un programa de 8 semanas para ayudar a nuevos negocios a establecerse.</p>
-            </article>
+            <!-- Artículos se cargarán aquí dinámicamente -->
         </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="form-contacto">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
     </section>
     
     <footer>
         <p>&copy; 2025 El Faro - Todos los derechos reservados</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
