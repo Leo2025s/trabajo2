@@ -1,39 +1,32 @@
-// Función para actualizar contador de artículos
-function actualizarContador() {
-    const contadores = document.querySelectorAll('.contador-articulos');
-    contadores.forEach(contador => {
-        const seccion = contador.getAttribute('data-seccion');
-        const cantidad = document.querySelectorAll(`#${seccion} article`).length;
-        contador.textContent = `(${cantidad} artículos)`;
-    });
+/* Estilos personalizados que complementan Bootstrap */
+
+/* Estilo para el reloj */
+#reloj {
+    font-family: monospace;
 }
 
-// Formulario para agregar artículos
-document.getElementById('form-articulo').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const titulo = document.getElementById('titulo').value;
-    const contenido = document.getElementById('contenido').value;
-    const categoria = document.getElementById('categoria').value;
-    
-    const articulo = document.createElement('article');
-    articulo.innerHTML = `
-        <h3>${titulo}</h3>
-        <p><strong>Categoría:</strong> ${categoria.charAt(0).toUpperCase() + categoria.slice(1)}</p>
-        <p>${contenido}</p>
-    `;
-    
-    document.querySelector(`#${categoria} .grid-articulos`).appendChild(articulo);
-    actualizarContador();
-    this.reset();
-});
+/* Efecto hover para tarjetas de artículos */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-// Formulario de contacto
-document.getElementById('form-contacto').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('¡Mensaje enviado con éxito! Gracias por contactarnos.');
-    this.reset();
-});
+/* Contador de artículos */
+.contador-articulos {
+    font-size: 0.8em;
+    color: #6c757d;
+    font-weight: normal;
+}
 
-// Inicializar contador al cargar la página
-document.addEventListener('DOMContentLoaded', actualizarContador);
+/* Ajustes para el formulario de contacto */
+#form-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo para la sección de avisos */
+.alert-warning {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
